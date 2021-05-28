@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Admin
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Admin
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -30,14 +30,12 @@ Partial Class Admin
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(12, 137)
+        Me.Button2.Location = New System.Drawing.Point(12, 12)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(143, 42)
         Me.Button2.TabIndex = 2
@@ -47,7 +45,7 @@ Partial Class Admin
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(161, 137)
+        Me.Button1.Location = New System.Drawing.Point(161, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(143, 42)
         Me.Button1.TabIndex = 3
@@ -57,7 +55,7 @@ Partial Class Admin
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Location = New System.Drawing.Point(12, 185)
+        Me.Button3.Location = New System.Drawing.Point(12, 60)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(143, 42)
         Me.Button3.TabIndex = 4
@@ -68,7 +66,7 @@ Partial Class Admin
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button4.Location = New System.Drawing.Point(161, 185)
+        Me.Button4.Location = New System.Drawing.Point(161, 60)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(143, 42)
         Me.Button4.TabIndex = 5
@@ -79,18 +77,17 @@ Partial Class Admin
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button5.Location = New System.Drawing.Point(310, 137)
+        Me.Button5.Location = New System.Drawing.Point(310, 12)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(143, 42)
         Me.Button5.TabIndex = 6
-        Me.Button5.Text = "Button5"
+        Me.Button5.Text = "Zurück"
         Me.Button5.UseVisualStyleBackColor = False
-        Me.Button5.Visible = False
         '
         'Button6
         '
         Me.Button6.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button6.Location = New System.Drawing.Point(310, 185)
+        Me.Button6.Location = New System.Drawing.Point(310, 60)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(143, 42)
         Me.Button6.TabIndex = 7
@@ -101,7 +98,7 @@ Partial Class Admin
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button7.Location = New System.Drawing.Point(459, 137)
+        Me.Button7.Location = New System.Drawing.Point(459, 12)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(143, 42)
         Me.Button7.TabIndex = 8
@@ -112,7 +109,7 @@ Partial Class Admin
         'Button8
         '
         Me.Button8.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button8.Location = New System.Drawing.Point(459, 185)
+        Me.Button8.Location = New System.Drawing.Point(458, 60)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(143, 42)
         Me.Button8.TabIndex = 9
@@ -120,31 +117,11 @@ Partial Class Admin
         Me.Button8.UseVisualStyleBackColor = False
         Me.Button8.Visible = False
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(183, 30)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(257, 21)
-        Me.ComboBox1.TabIndex = 13
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 20)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(164, 32)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Motorrad:"
-        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(613, 244)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label2)
+        Me.ClientSize = New System.Drawing.Size(610, 114)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
@@ -157,7 +134,6 @@ Partial Class Admin
         Me.Name = "Admin"
         Me.Text = "Admin"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -169,6 +145,4 @@ Partial Class Admin
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label2 As Label
 End Class

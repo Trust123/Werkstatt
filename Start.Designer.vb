@@ -23,13 +23,13 @@ Partial Class Start
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -40,40 +40,22 @@ Partial Class Start
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(1136, 459)
+        Me.Button1.Location = New System.Drawing.Point(1136, 555)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Admin"
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(1068, 488)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(143, 42)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Location = New System.Drawing.Point(1068, 536)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(143, 42)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button4
         '
@@ -97,10 +79,11 @@ Partial Class Start
         '
         'ListBox1
         '
+        Me.ListBox1.Enabled = False
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(0, 20)
+        Me.ListBox1.Location = New System.Drawing.Point(0, 33)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(133, 433)
+        Me.ListBox1.Size = New System.Drawing.Size(133, 420)
         Me.ListBox1.TabIndex = 0
         '
         'Button5
@@ -116,6 +99,7 @@ Partial Class Start
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Controls.Add(Me.ListBox2)
         Me.GroupBox2.Location = New System.Drawing.Point(152, 278)
         Me.GroupBox2.Name = "GroupBox2"
@@ -124,12 +108,32 @@ Partial Class Start
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Reperatur & Service"
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.ListBox3)
+        Me.GroupBox3.Location = New System.Drawing.Point(0, 20)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(132, 440)
+        Me.GroupBox3.TabIndex = 1
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Kilometerstand"
+        '
+        'ListBox3
+        '
+        Me.ListBox3.Enabled = False
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Location = New System.Drawing.Point(0, 14)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(132, 420)
+        Me.ListBox3.TabIndex = 1
+        '
         'ListBox2
         '
+        Me.ListBox2.Enabled = False
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(0, 20)
+        Me.ListBox2.Location = New System.Drawing.Point(138, 33)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(890, 433)
+        Me.ListBox2.Size = New System.Drawing.Size(752, 420)
         Me.ListBox2.TabIndex = 0
         '
         'Button6
@@ -211,12 +215,23 @@ Partial Class Start
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(553, 12)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(124, 32)
+        Me.Label4.TabIndex = 17
+        Me.Label4.Text = "Label4"
+        '
         'Start
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1223, 741)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.MonthCalendar1)
@@ -230,8 +245,6 @@ Partial Class Start
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.MaximumSize = New System.Drawing.Size(1239, 780)
         Me.MinimumSize = New System.Drawing.Size(1239, 780)
@@ -239,6 +252,7 @@ Partial Class Start
         Me.Text = "Wertstatt"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -246,8 +260,6 @@ Partial Class Start
     End Sub
 
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ListBox1 As ListBox
@@ -263,4 +275,7 @@ Partial Class Start
     Friend WithEvents MonthCalendar1 As MonthCalendar
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents Label4 As Label
 End Class

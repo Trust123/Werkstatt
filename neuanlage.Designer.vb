@@ -38,6 +38,8 @@ Partial Class neuanlage
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label2
@@ -64,7 +66,7 @@ Partial Class neuanlage
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 73)
+        Me.Label3.Location = New System.Drawing.Point(12, 229)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(223, 32)
         Me.Label3.TabIndex = 15
@@ -179,11 +181,30 @@ Partial Class neuanlage
         Me.TextBox7.Size = New System.Drawing.Size(378, 20)
         Me.TextBox7.TabIndex = 28
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(12, 69)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(210, 32)
+        Me.Label8.TabIndex = 29
+        Me.Label8.Text = "Kennzeichen:"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(347, 239)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(378, 20)
+        Me.TextBox8.TabIndex = 30
+        '
         'neuanlage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(796, 342)
+        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.TextBox6)
@@ -223,4 +244,6 @@ Partial Class neuanlage
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox8 As TextBox
 End Class
