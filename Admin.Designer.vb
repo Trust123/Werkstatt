@@ -30,6 +30,8 @@ Partial Class Admin
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button2
@@ -39,7 +41,7 @@ Partial Class Admin
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(143, 42)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
+        Me.Button2.Text = "Neuanlage"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
@@ -49,7 +51,7 @@ Partial Class Admin
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(143, 42)
         Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Laden"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button3
@@ -61,6 +63,7 @@ Partial Class Admin
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "Button3"
         Me.Button3.UseVisualStyleBackColor = False
+        Me.Button3.Visible = False
         '
         'Button4
         '
@@ -71,6 +74,7 @@ Partial Class Admin
         Me.Button4.TabIndex = 5
         Me.Button4.Text = "Button4"
         Me.Button4.UseVisualStyleBackColor = False
+        Me.Button4.Visible = False
         '
         'Button5
         '
@@ -81,6 +85,7 @@ Partial Class Admin
         Me.Button5.TabIndex = 6
         Me.Button5.Text = "Button5"
         Me.Button5.UseVisualStyleBackColor = False
+        Me.Button5.Visible = False
         '
         'Button6
         '
@@ -91,6 +96,7 @@ Partial Class Admin
         Me.Button6.TabIndex = 7
         Me.Button6.Text = "Button6"
         Me.Button6.UseVisualStyleBackColor = False
+        Me.Button6.Visible = False
         '
         'Button7
         '
@@ -101,6 +107,7 @@ Partial Class Admin
         Me.Button7.TabIndex = 8
         Me.Button7.Text = "Button7"
         Me.Button7.UseVisualStyleBackColor = False
+        Me.Button7.Visible = False
         '
         'Button8
         '
@@ -111,12 +118,33 @@ Partial Class Admin
         Me.Button8.TabIndex = 9
         Me.Button8.Text = "Button8"
         Me.Button8.UseVisualStyleBackColor = False
+        Me.Button8.Visible = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(183, 30)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(257, 21)
+        Me.ComboBox1.TabIndex = 13
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(12, 20)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(164, 32)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Motorrad:"
         '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(613, 244)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
@@ -129,6 +157,7 @@ Partial Class Admin
         Me.Name = "Admin"
         Me.Text = "Admin"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -140,4 +169,6 @@ Partial Class Admin
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

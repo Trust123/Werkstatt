@@ -36,6 +36,9 @@ Partial Class Start
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -85,7 +88,7 @@ Partial Class Start
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.ListBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 269)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 278)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(133, 460)
         Me.GroupBox1.TabIndex = 4
@@ -112,10 +115,11 @@ Partial Class Start
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.ListBox2)
-        Me.GroupBox2.Location = New System.Drawing.Point(152, 269)
+        Me.GroupBox2.Location = New System.Drawing.Point(152, 278)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(887, 460)
+        Me.GroupBox2.Size = New System.Drawing.Size(896, 460)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Reperatur & Service"
@@ -125,7 +129,7 @@ Partial Class Start
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.Location = New System.Drawing.Point(0, 20)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(887, 433)
+        Me.ListBox2.Size = New System.Drawing.Size(890, 433)
         Me.ListBox2.TabIndex = 0
         '
         'Button6
@@ -141,9 +145,9 @@ Partial Class Start
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(335, 22)
+        Me.ComboBox1.Location = New System.Drawing.Point(329, 22)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(212, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(218, 21)
         Me.ComboBox1.TabIndex = 8
         '
         'Label1
@@ -160,7 +164,7 @@ Partial Class Start
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(12, 71)
+        Me.Label2.Location = New System.Drawing.Point(6, 76)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(317, 32)
         Me.Label2.TabIndex = 10
@@ -168,20 +172,43 @@ Partial Class Start
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(335, 71)
+        Me.RichTextBox1.Location = New System.Drawing.Point(329, 86)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(492, 169)
         Me.RichTextBox1.TabIndex = 11
         Me.RichTextBox1.Text = ""
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Label3.Location = New System.Drawing.Point(6, 44)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(251, 32)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "Kilometerstand:"
+        '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.Location = New System.Drawing.Point(12, 115)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.TabIndex = 14
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(329, 50)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(218, 20)
+        Me.TextBox1.TabIndex = 15
+        '
         'PictureBox1
         '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.Image = Global.Werkstatt.My.Resources.Resources.s_l400
-        Me.PictureBox1.Location = New System.Drawing.Point(943, 2)
+        Me.PictureBox1.Image = Global.Werkstatt.My.Resources.Resources.sm4711
+        Me.PictureBox1.Location = New System.Drawing.Point(971, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(278, 375)
-        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.Size = New System.Drawing.Size(240, 253)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
         'Start
@@ -190,6 +217,10 @@ Partial Class Start
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1223, 741)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.MonthCalendar1)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -202,7 +233,6 @@ Partial Class Start
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.PictureBox1)
         Me.MaximumSize = New System.Drawing.Size(1239, 780)
         Me.MinimumSize = New System.Drawing.Size(1239, 780)
         Me.Name = "Start"
@@ -229,5 +259,8 @@ Partial Class Start
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PictureBox1 As PictureBox
 End Class
