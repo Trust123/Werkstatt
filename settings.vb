@@ -1,4 +1,9 @@
 ﻿Public Class settings
+    Private Sub Setting_load(sender As Object, e As EventArgs) Handles Me.Load
+
+        TextBox1.Text = My.Settings.Datenbankpfad
+
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim greeting As String = My.Settings.Datenbankpfad
         Try
