@@ -7,6 +7,7 @@ Public Class Start
     Public Sub Tool_load(sender As Object, e As EventArgs) Handles Me.Load
         'Datenbank Kennzeichen laden beim öffnen
         Label4.Text = ""
+        Label10.Text = ""
         query = "SELECT * FROM Motorrad"
         Dim conn As New OdbcConnection(conStr)
         Dim com As New OdbcCommand(query, conn)
@@ -70,7 +71,7 @@ Public Class Start
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        Admin.Show()
+        login.Show()
     End Sub
     Private Sub EinstellungenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EinstellungenToolStripMenuItem.Click
         'Einstellungen
@@ -125,8 +126,10 @@ Public Class Start
             reader = com.ExecuteReader()
 
             Do While reader.Read()
+                TextBox1.Text = reader("km")
                 TextBox2.Text = reader("hu")
-                Label4.Text = reader("Hersteller")
+                Label4.Text = reader("hersteller")
+                Label10.Text = reader("typ")
             Loop
             reader.Close()
             conn.Close()
@@ -177,7 +180,7 @@ Public Class Start
         Try
             conn.Open()
             com.ExecuteNonQuery()
-            MsgBox("Gespeichert")
+
         Catch ex As Exception
             MsgBox("Fehler" & vbCrLf & ex.Message)
         Finally
@@ -245,7 +248,7 @@ Public Class Start
             reader.Close()
             conn.Close()
         Catch ex As Exception
-
+            MsgBox("Fehler" & vbCrLf & ex.Message)
         End Try
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

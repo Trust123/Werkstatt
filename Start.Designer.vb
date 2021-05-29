@@ -61,6 +61,7 @@ Partial Class Start
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -408,12 +409,23 @@ Partial Class Start
         Me.Label8.Text = "Label8"
         Me.Label8.Visible = False
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Label10.Location = New System.Drawing.Point(706, 21)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(119, 32)
+        Me.Label10.TabIndex = 41
+        Me.Label10.Text = "label10"
+        '
         'Start
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1223, 741)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label11)
@@ -490,4 +502,5 @@ Partial Class Start
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents Label10 As Label
 End Class
