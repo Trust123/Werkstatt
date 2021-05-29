@@ -65,7 +65,6 @@ Partial Class Admin
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "Ändern"
         Me.Button3.UseVisualStyleBackColor = False
-        Me.Button3.Visible = False
         '
         'Button4
         '
@@ -108,7 +107,6 @@ Partial Class Admin
         Me.Button7.TabIndex = 8
         Me.Button7.Text = "Löschen"
         Me.Button7.UseVisualStyleBackColor = False
-        Me.Button7.Visible = False
         '
         'Button8
         '

@@ -11,7 +11,27 @@ Public Class datenladen
         Label11.Text = ""
         Label13.Text = ""
         Label15.Text = ""
+        'Datenbank Kennzeichen laden beim öffnen
+        query = "SELECT * FROM Motorrad"
+        Dim conn As New OdbcConnection(conStr)
+        Dim com As New OdbcCommand(query, conn)
+        Dim reader As OdbcDataReader
 
+        Try
+            conn.Open()
+            reader = com.ExecuteReader()
+            ComboBox1.Items.Clear()
+
+
+            Do While reader.Read()
+                ComboBox1.Items.Add(
+                    reader("Kennzeichen"))
+            Loop
+            reader.Close()
+            conn.Close()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
