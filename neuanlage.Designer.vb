@@ -48,9 +48,9 @@ Partial Class neuanlage
         Me.Label2.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(164, 32)
+        Me.Label2.Size = New System.Drawing.Size(184, 32)
         Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Motorrad:"
+        Me.Label2.Text = "Hersteller:"
         '
         'Label1
         '
@@ -85,7 +85,7 @@ Partial Class neuanlage
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(492, 288)
+        Me.Button2.Location = New System.Drawing.Point(497, 265)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(143, 42)
         Me.Button2.TabIndex = 17
@@ -95,7 +95,7 @@ Partial Class neuanlage
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(641, 288)
+        Me.Button1.Location = New System.Drawing.Point(646, 265)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(143, 42)
         Me.Button1.TabIndex = 18
@@ -125,7 +125,7 @@ Partial Class neuanlage
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(347, 143)
+        Me.TextBox4.Location = New System.Drawing.Point(347, 111)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(378, 20)
         Me.TextBox4.TabIndex = 22
@@ -136,13 +136,13 @@ Partial Class neuanlage
         Me.Label5.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(12, 101)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(329, 32)
+        Me.Label5.Size = New System.Drawing.Size(80, 32)
         Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Handelsbezeichnung:"
+        Me.Label5.Text = "Typ:"
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(347, 111)
+        Me.TextBox5.Location = New System.Drawing.Point(347, 143)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(378, 20)
         Me.TextBox5.TabIndex = 24
@@ -202,7 +202,7 @@ Partial Class neuanlage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(796, 342)
+        Me.ClientSize = New System.Drawing.Size(796, 314)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TextBox7)
@@ -221,6 +221,8 @@ Partial Class neuanlage
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
+        Me.MaximumSize = New System.Drawing.Size(812, 353)
+        Me.MinimumSize = New System.Drawing.Size(812, 353)
         Me.Name = "neuanlage"
         Me.Text = "Neuanlage"
         Me.ResumeLayout(False)

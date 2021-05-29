@@ -116,6 +116,24 @@
     <Compile Include="datenladen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="datenupdate.Designer.vb">
+      <DependentUpon>datenupdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="datenupdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="settings.Designer.vb">
+      <DependentUpon>settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="neuanlage.Designer.vb">
       <DependentUpon>neuanlage.vb</DependentUpon>
     </Compile>
@@ -152,8 +170,14 @@
     <EmbeddedResource Include="datenladen.resx">
       <DependentUpon>datenladen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="datenupdate.resx">
+      <DependentUpon>datenupdate.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="neuanlage.resx">
       <DependentUpon>neuanlage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settings.resx">
+      <DependentUpon>settings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.vb</DependentUpon>
@@ -198,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sm471.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

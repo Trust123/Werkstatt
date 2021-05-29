@@ -4,7 +4,7 @@ Public Class Start
     Dim query As String
     Dim conStr As String = "Driver={Microsoft Access Driver (*.mdb)};Dbq=" & My.Settings.Datenbankpfad
 
-    Public Sub start_load(sender As Object, e As EventArgs) Handles Me.Load
+    Public Sub Tool_load(sender As Object, e As EventArgs) Handles Me.Load
         'Datenbank Kennzeichen laden beim öffnen
         Label4.Text = ""
         query = "SELECT * FROM Motorrad"
@@ -29,23 +29,62 @@ Public Class Start
             reader.Close()
             conn.Close()
         Catch ex As Exception
-            MsgBox("Fehler" & vbCrLf & ex.Message)
+
+        End Try
+    End Sub
+    Public Sub Tool_load2(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        'Datenbank Kennzeichen laden beim öffnen
+        Label4.Text = ""
+        query = "SELECT * FROM motorrad WHERE kennzeichen='" & ComboBox1.SelectedItem & "'"
+        Dim conn As New OdbcConnection(conStr)
+        Dim com As New OdbcCommand(query, conn)
+        Dim reader As OdbcDataReader
+
+        Try
+            conn.Open()
+            reader = com.ExecuteReader()
+            Label8.Text = ""
+            Label6.Text = ""
+            Label7.Text = ""
+            Label9.Text = ""
+            Label11.Text = ""
+            Label13.Text = ""
+            Label15.Text = ""
+
+
+            Do While reader.Read()
+                Label8.Text = reader("fin")
+                Label6.Text = reader("hersteller")
+                Label7.Text = reader("typ")
+                Label9.Text = reader("farbe")
+                Label11.Text = reader("km")
+                Label13.Text = reader("hu")
+                Label15.Text = reader("reifen")
+
+            Loop
+            reader.Close()
+            conn.Close()
+        Catch ex As Exception
+
         End Try
     End Sub
 
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'Admin-Panel
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         Admin.Show()
     End Sub
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub EinstellungenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EinstellungenToolStripMenuItem.Click
+        'Einstellungen
+        settings.Show()
+    End Sub
+
+    Private Sub BeendenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BeendenToolStripMenuItem.Click
         'Beenden
         Application.Exit()
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         'Datenbank laden bei Kennzeichenauswahl
-        query = "SELECT * FROM service"
+        query = "SELECT * FROM service WHERE kennzeichen='" & ComboBox1.SelectedItem & "'"
         Dim conn As New OdbcConnection(conStr)
         Dim com As New OdbcCommand(query, conn)
         Dim reader As OdbcDataReader
@@ -59,13 +98,125 @@ Public Class Start
 
             Do While reader.Read()
                 ListBox1.Items.Add(
-                    reader(""))
+                    reader("datum"))
 
                 ListBox2.Items.Add(
-                    reader(""))
+                    reader("was"))
 
                 ListBox3.Items.Add(
-                    reader(""))
+                    reader("km"))
+                Label4.Text = reader("kennzeichen")
+            Loop
+            reader.Close()
+            conn.Close()
+        Catch ex As Exception
+            MsgBox("Fehler" & vbCrLf & ex.Message)
+        End Try
+    End Sub
+    Private Sub ComboBox1_SelectedIndexChanged2(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        'Datenbank laden bei Kennzeichenauswahl
+        query = "SELECT * FROM Motorrad WHERE kennzeichen='" & ComboBox1.SelectedItem & "'"
+        Dim conn As New OdbcConnection(conStr)
+        Dim com As New OdbcCommand(query, conn)
+        Dim reader As OdbcDataReader
+
+        Try
+            conn.Open()
+            reader = com.ExecuteReader()
+
+            Do While reader.Read()
+                TextBox2.Text = reader("hu")
+                Label4.Text = reader("Hersteller")
+            Loop
+            reader.Close()
+            conn.Close()
+        Catch ex As Exception
+            MsgBox("Fehler" & vbCrLf & ex.Message)
+        End Try
+    End Sub
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        'speichern
+        query = "INSERT INTO service(kennzeichen, datum, km, was) VALUES ('" & ComboBox1.SelectedItem & "', '" & MonthCalendar1.SelectionStart.ToString("dd/MM/yyyy") & "', '" & TextBox1.Text & "', '" & RichTextBox1.Text & "')"
+        Dim conn As New OdbcConnection(conStr)
+        Dim com As New OdbcCommand(query, conn)
+
+        Try
+            conn.Open()
+            com.ExecuteNonQuery()
+            MsgBox("Gespeichert")
+        Catch ex As Exception
+            MsgBox("Fehler" & vbCrLf & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+    Private Sub Button5_Click2(sender As Object, e As EventArgs) Handles Button5.Click
+        'moped löschen
+        query = "DELETE FROM motorrad WHERE kennzeichen IN ('" & ComboBox1.SelectedItem & "')"
+
+        Dim conn As New OdbcConnection(conStr)
+        Dim com As New OdbcCommand(query, conn)
+
+
+        Try
+            conn.Open()
+            com.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Fehler" & vbCrLf & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+    Private Sub Button5_Click3(sender As Object, e As EventArgs) Handles Button5.Click
+        'speichern
+        query = "INSERT INTO motorrad(typ, fin, hersteller, kennzeichen, farbe, hu, km, reifen) VALUES ('" & Label7.Text & "', '" & Label8.Text & "', '" & Label6.Text & "', '" & ComboBox1.SelectedItem & "', '" & Label9.Text & "','" & TextBox2.Text & "', '" & TextBox1.Text & "', '" & Label15.Text & "')"
+        Dim conn As New OdbcConnection(conStr)
+        Dim com As New OdbcCommand(query, conn)
+
+        Try
+            conn.Open()
+            com.ExecuteNonQuery()
+            MsgBox("Gespeichert")
+        Catch ex As Exception
+            MsgBox("Fehler" & vbCrLf & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        'Laden
+        query = "SELECT * FROM service WHERE kennzeichen='" & ComboBox1.SelectedItem & "'"
+        Dim conn As New OdbcConnection(conStr)
+        Dim com As New OdbcCommand(query, conn)
+        Dim reader As OdbcDataReader
+
+        Try
+            conn.Open()
+            reader = com.ExecuteReader()
+            ListBox1.Items.Clear()
+            ListBox2.Items.Clear()
+            ListBox3.Items.Clear()
+
+            Do While reader.Read()
+                ListBox1.Items.Add(
+                    reader("datum"))
+
+                ListBox2.Items.Add(
+                    reader("was"))
+
+                ListBox3.Items.Add(
+                    reader("km"))
+
+                ListBox4.Items.Add(
+                    reader("datum"))
+                ListBox4.Items.Add(
+                    reader("km"))
+                ListBox4.Items.Add(
+                    reader("was"))
+                ListBox4.Items.Add(
+                    "")
+
 
             Loop
             reader.Close()
@@ -73,5 +224,48 @@ Public Class Start
         Catch ex As Exception
             MsgBox("Fehler" & vbCrLf & ex.Message)
         End Try
+    End Sub
+    Private Sub Button6_Click2(sender As Object, e As EventArgs) Handles Button6.Click
+        'Datenbank Kennzeichen laden beim öffnen
+
+        query = "SELECT * FROM Motorrad"
+        Dim conn As New OdbcConnection(conStr)
+        Dim com As New OdbcCommand(query, conn)
+        Dim reader As OdbcDataReader
+
+        Try
+            conn.Open()
+            reader = com.ExecuteReader()
+            ComboBox1.Items.Clear()
+            Do While reader.Read()
+                ComboBox1.Items.Add(
+                    reader("Kennzeichen"))
+                TextBox2.Text = reader("hu")
+            Loop
+            reader.Close()
+            conn.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        PrintPreviewDialog1.Document = PrintDocument1
+        PrintPreviewDialog1.ShowDialog()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim startX As Integer = 62
+        Dim startY As Integer = 62
+        For x As Integer = 0 To ListBox4.Items.Count - 1
+            e.Graphics.DrawString(ListBox4.Items(x).ToString, ListBox4.Font, Brushes.Black, startX, startY)
+            startY += ListBox4.ItemHeight
+        Next
+    End Sub
+
+    Private Sub AnlegenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnlegenToolStripMenuItem.Click
+        neuanlage.Show()
+    End Sub
+    Private Sub ÄndernToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ÄndernToolStripMenuItem.Click
+        datenupdate.Show()
     End Sub
 End Class
