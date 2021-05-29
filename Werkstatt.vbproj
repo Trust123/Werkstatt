@@ -82,7 +82,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>wrenchtool_102747.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\wrenchtool_102747.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -238,7 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wrenchtool_102747.ico" />
-    <Content Include="wrenchtool_102747.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
