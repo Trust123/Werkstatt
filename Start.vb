@@ -319,8 +319,11 @@ Public Class Start
 
         Try
             Dim path As String = My.Settings.download
-            My.Computer.Network.DownloadFile(path, Application.StartupPath & "\Werkstatt" & uplabelnew.Text & ".exe")
-            MsgBox("Das Update wurde herunter geladen!")
+            Dim path2 As String = My.Settings.updatebat
+            My.Computer.Network.DownloadFile(path, Application.StartupPath & "\update.exe")
+            My.Computer.Network.DownloadFile(path2, Application.StartupPath & "\update.bat")
+            Process.Start("Update.bat")
+            Application.Exit()
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try

@@ -6,10 +6,13 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="update" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://gofile.me/449qx/UzJHdfY9E</Value>
+      <Value Profile="(Default)">https://www.dropbox.com/s/mg7204nq9bccsrq/update.txt?dl=1</Value>
     </Setting>
     <Setting Name="download" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://gofile.me/449qx/R6Wetb0mF</Value>
+      <Value Profile="(Default)">https://www.dropbox.com/s/80q37jgp0w9bqwy/Werkstatt.exe?dl=1</Value>
+    </Setting>
+    <Setting Name="updatebat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.dropbox.com/s/0t5pcimmwdpmiha/update.bat?dl=1</Value>
     </Setting>
   </Settings>
 </SettingsFile>
