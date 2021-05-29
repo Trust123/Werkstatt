@@ -12,5 +12,9 @@ Login: Admin
 Pwd: Dietmar
 
 Future updates:
+
  •updater
+ 
  •lang select
+ 
+ •database online stored
