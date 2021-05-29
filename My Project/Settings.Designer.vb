@@ -68,7 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("https://www.dropbox.com/s/mg7204nq9bccsrq/update.txt?dl=1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property update() As String
             Get
                 Return CType(Me("update"),String)
@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("https://www.dropbox.com/s/80q37jgp0w9bqwy/Werkstatt.exe?dl=1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property download() As String
             Get
                 Return CType(Me("download"),String)
