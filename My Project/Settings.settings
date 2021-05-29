@@ -9,10 +9,10 @@
       <Value Profile="(Default)">https://www.dropbox.com/s/mg7204nq9bccsrq/update.txt?dl=1</Value>
     </Setting>
     <Setting Name="download" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.dropbox.com/s/80q37jgp0w9bqwy/Werkstatt.exe?dl=1</Value>
+      <Value Profile="(Default)">https://unity-wow.tk/download/Werkstatt.exe</Value>
     </Setting>
     <Setting Name="updatebat" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.dropbox.com/s/0t5pcimmwdpmiha/update.bat?dl=1</Value>
+      <Value Profile="(Default)">https://unity-wow.tk/download/update.bat</Value>
     </Setting>
   </Settings>
 </SettingsFile>

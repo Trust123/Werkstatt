@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("https://www.dropbox.com/s/80q37jgp0w9bqwy/Werkstatt.exe?dl=1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://unity-wow.tk/download/Werkstatt.exe")>  _
         Public Property download() As String
             Get
                 Return CType(Me("download"),String)
@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("https://www.dropbox.com/s/0t5pcimmwdpmiha/update.bat?dl=1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://unity-wow.tk/download/update.bat")>  _
         Public Property updatebat() As String
             Get
                 Return CType(Me("updatebat"),String)

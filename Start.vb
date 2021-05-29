@@ -314,6 +314,12 @@ Public Class Start
 
         End If
 
+        Try
+            My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\update.bat")
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
     End Sub
     Private Sub upbutton_Click(sender As Object, e As EventArgs) Handles upbutton.Click
 
@@ -322,7 +328,7 @@ Public Class Start
             Dim path2 As String = My.Settings.updatebat
             My.Computer.Network.DownloadFile(path, Application.StartupPath & "\update.exe")
             My.Computer.Network.DownloadFile(path2, Application.StartupPath & "\update.bat")
-            Process.Start("Update.bat")
+            Process.Start("update.bat")
             Application.Exit()
         Catch ex As Exception
             MsgBox(ex.ToString)
