@@ -225,7 +225,7 @@ Public Class Start
             reader.Close()
             conn.Close()
         Catch ex As Exception
-            MsgBox("Fehler" & vbCrLf & ex.Message)
+
         End Try
     End Sub
     Private Sub Button6_Click2(sender As Object, e As EventArgs) Handles Button6.Click
@@ -243,12 +243,12 @@ Public Class Start
             Do While reader.Read()
                 ComboBox1.Items.Add(
                     reader("Kennzeichen"))
-                TextBox2.Text = reader("hu")
+
             Loop
             reader.Close()
             conn.Close()
         Catch ex As Exception
-            MsgBox("Fehler" & vbCrLf & ex.Message)
+
         End Try
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
