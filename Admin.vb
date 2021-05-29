@@ -46,9 +46,8 @@ Public Class Admin
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         'moped löschen
-        Dim query As String
-        Dim conStr As String = "Driver={Microsoft Access Driver (*.mdb)};Dbq=" & Application.StartupPath & "\db\corona.mdb;"
         query = "DELETE FROM motorrad WHERE kennzeichen IN ('" & ComboBox1.SelectedItem & "')"
+
         Dim conn As New OdbcConnection(conStr)
         Dim com As New OdbcCommand(query, conn)
 
@@ -56,7 +55,7 @@ Public Class Admin
         Try
             conn.Open()
             com.ExecuteNonQuery()
-            MsgBox("Gelöscht")
+
         Catch ex As Exception
             MsgBox("Fehler" & vbCrLf & ex.Message)
         Finally

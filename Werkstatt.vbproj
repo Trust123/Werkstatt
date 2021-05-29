@@ -78,6 +78,12 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>wrenchtool_102747.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -173,6 +179,9 @@
     <EmbeddedResource Include="datenupdate.resx">
       <DependentUpon>datenupdate.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="neuanlage.resx">
       <DependentUpon>neuanlage.vb</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +199,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -225,6 +235,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrenchtool_102747.ico" />
+    <Content Include="wrenchtool_102747.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

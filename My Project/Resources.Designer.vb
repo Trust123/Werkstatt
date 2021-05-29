@@ -99,5 +99,15 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+        '''</summary>
+        Friend ReadOnly Property wrenchtool_102747() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wrenchtool_102747", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
     End Module
 End Namespace

@@ -450,6 +450,7 @@ Partial Class Start
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(1239, 780)
         Me.MinimumSize = New System.Drawing.Size(1239, 780)
         Me.Name = "Start"
