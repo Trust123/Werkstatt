@@ -298,7 +298,7 @@ Public Class Start
     End Sub
 
     'Updatefunktion
-    Private Sub Update() Handles Me.Load
+    Private Sub Update_load() Handles Me.Load
 
 
         Dim url As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create(My.Settings.update)
@@ -317,7 +317,7 @@ Public Class Start
         Try
             My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\update.bat")
         Catch ex As Exception
-            MsgBox(ex.ToString)
+
         End Try
 
     End Sub
