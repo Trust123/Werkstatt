@@ -31,6 +31,7 @@ Partial Class Start
         Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -39,7 +40,6 @@ Partial Class Start
         Me.Label3 = New System.Windows.Forms.Label()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
@@ -49,6 +49,11 @@ Partial Class Start
         Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.AnlegenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ÄndernToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label4 = New System.Windows.Forms.ToolStripLabel()
+        Me.Label10 = New System.Windows.Forms.ToolStripLabel()
+        Me.upbutton = New System.Windows.Forms.ToolStripButton()
+        Me.uplabel = New System.Windows.Forms.ToolStripLabel()
+        Me.uplabelnew = New System.Windows.Forms.ToolStripLabel()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -61,10 +66,11 @@ Partial Class Start
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -82,6 +88,7 @@ Partial Class Start
         'ListBox1
         '
         Me.ListBox1.Enabled = False
+        Me.ListBox1.ForeColor = System.Drawing.Color.Black
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(0, 33)
         Me.ListBox1.Name = "ListBox1"
@@ -104,6 +111,7 @@ Partial Class Start
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Controls.Add(Me.ListBox2)
         Me.GroupBox2.Controls.Add(Me.ListBox4)
+        Me.GroupBox2.Controls.Add(Me.PictureBox2)
         Me.GroupBox2.Location = New System.Drawing.Point(152, 278)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(896, 460)
@@ -124,6 +132,7 @@ Partial Class Start
         'ListBox3
         '
         Me.ListBox3.Enabled = False
+        Me.ListBox3.ForeColor = System.Drawing.Color.Black
         Me.ListBox3.FormattingEnabled = True
         Me.ListBox3.Location = New System.Drawing.Point(0, 14)
         Me.ListBox3.Name = "ListBox3"
@@ -133,6 +142,7 @@ Partial Class Start
         'ListBox2
         '
         Me.ListBox2.Enabled = False
+        Me.ListBox2.ForeColor = System.Drawing.Color.Black
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.Location = New System.Drawing.Point(138, 33)
         Me.ListBox2.Name = "ListBox2"
@@ -147,6 +157,16 @@ Partial Class Start
         Me.ListBox4.Size = New System.Drawing.Size(120, 95)
         Me.ListBox4.TabIndex = 20
         Me.ListBox4.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Werkstatt.My.Resources.Resources.sm471
+        Me.PictureBox2.Location = New System.Drawing.Point(533, 353)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox2.TabIndex = 41
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
         '
         'Button6
         '
@@ -217,16 +237,6 @@ Partial Class Start
         Me.TextBox1.Size = New System.Drawing.Size(218, 20)
         Me.TextBox1.TabIndex = 15
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(553, 22)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(124, 32)
-        Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Label4"
-        '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.ButtonFace
@@ -239,7 +249,7 @@ Partial Class Start
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1, Me.ToolStripDropDownButton2})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1, Me.ToolStripDropDownButton2, Me.Label4, Me.Label10, Me.upbutton, Me.uplabel, Me.uplabelnew})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1223, 25)
@@ -298,6 +308,46 @@ Partial Class Start
         Me.ÄndernToolStripMenuItem.Name = "ÄndernToolStripMenuItem"
         Me.ÄndernToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
         Me.ÄndernToolStripMenuItem.Text = "Ändern"
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Magneto", 10.0!)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(132, 22)
+        Me.Label4.Text = "ToolStripLabel1"
+        '
+        'Label10
+        '
+        Me.Label10.Font = New System.Drawing.Font("Magneto", 10.0!)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(135, 22)
+        Me.Label10.Text = "ToolStripLabel2"
+        '
+        'upbutton
+        '
+        Me.upbutton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.upbutton.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.upbutton.ForeColor = System.Drawing.Color.Red
+        Me.upbutton.Image = CType(resources.GetObject("upbutton.Image"), System.Drawing.Image)
+        Me.upbutton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.upbutton.Name = "upbutton"
+        Me.upbutton.Size = New System.Drawing.Size(55, 22)
+        Me.upbutton.Text = "Update"
+        Me.upbutton.Visible = False
+        '
+        'uplabel
+        '
+        Me.uplabel.Name = "uplabel"
+        Me.uplabel.Size = New System.Drawing.Size(57, 22)
+        Me.uplabel.Text = "versionak"
+        Me.uplabel.Visible = False
+        '
+        'uplabelnew
+        '
+        Me.uplabelnew.Name = "uplabelnew"
+        Me.uplabelnew.Size = New System.Drawing.Size(59, 22)
+        Me.uplabelnew.Text = "versionup"
+        Me.uplabelnew.Visible = False
         '
         'PrintPreviewDialog1
         '
@@ -409,23 +459,12 @@ Partial Class Start
         Me.Label8.Text = "Label8"
         Me.Label8.Visible = False
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Magneto", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.Label10.Location = New System.Drawing.Point(706, 21)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(119, 32)
-        Me.Label10.TabIndex = 41
-        Me.Label10.Text = "label10"
-        '
         'Start
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1223, 741)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label11)
@@ -437,7 +476,6 @@ Partial Class Start
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.MonthCalendar1)
@@ -458,6 +496,7 @@ Partial Class Start
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -481,7 +520,6 @@ Partial Class Start
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents ListBox3 As ListBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
@@ -503,5 +541,11 @@ Partial Class Start
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents Label4 As ToolStripLabel
+    Friend WithEvents Label10 As ToolStripLabel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents uplabel As ToolStripLabel
+    Friend WithEvents upbutton As ToolStripButton
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents uplabelnew As ToolStripLabel
 End Class

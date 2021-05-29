@@ -8,6 +8,8 @@ Public Class Start
         'Datenbank Kennzeichen laden beim öffnen
         Label4.Text = ""
         Label10.Text = ""
+        uplabel.Text = Application.ProductVersion
+
         query = "SELECT * FROM Motorrad"
         Dim conn As New OdbcConnection(conStr)
         Dim com As New OdbcCommand(query, conn)
@@ -20,6 +22,7 @@ Public Class Start
             ListBox1.Items.Clear()
             ListBox2.Items.Clear()
             ListBox3.Items.Clear()
+            ListBox4.Items.Clear()
             ComboBox1.Items.Clear()
 
 
@@ -33,6 +36,9 @@ Public Class Start
 
         End Try
     End Sub
+
+
+
     Public Sub Tool_load2(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         'Datenbank Kennzeichen laden beim öffnen
         Label4.Text = ""
@@ -96,6 +102,7 @@ Public Class Start
             ListBox1.Items.Clear()
             ListBox2.Items.Clear()
             ListBox3.Items.Clear()
+            ListBox4.Items.Clear()
 
             Do While reader.Read()
                 ListBox1.Items.Add(
@@ -106,7 +113,15 @@ Public Class Start
 
                 ListBox3.Items.Add(
                     reader("km"))
-                Label4.Text = reader("kennzeichen")
+                ListBox4.Items.Add(
+                    reader("datum"))
+                ListBox4.Items.Add(
+                    reader("km"))
+                ListBox4.Items.Add(
+                    reader("was"))
+                ListBox4.Items.Add(
+                    "")
+
             Loop
             reader.Close()
             conn.Close()
@@ -189,7 +204,7 @@ Public Class Start
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         'Laden
-        query = "SELECT * FROM service WHERE kennzeichen='" & ComboBox1.SelectedItem & "'"
+        query = "SELECT * FROM service WHERE kennzeichen='" & ComboBox1.SelectedItem & "' ORDER BY km"
         Dim conn As New OdbcConnection(conStr)
         Dim com As New OdbcCommand(query, conn)
         Dim reader As OdbcDataReader
@@ -200,6 +215,7 @@ Public Class Start
             ListBox1.Items.Clear()
             ListBox2.Items.Clear()
             ListBox3.Items.Clear()
+            ListBox4.Items.Clear()
 
             Do While reader.Read()
                 ListBox1.Items.Add(
@@ -258,7 +274,16 @@ Public Class Start
 
     Private Sub PrintDocument1_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
         Dim startX As Integer = 62
-        Dim startY As Integer = 62
+        Dim startY As Integer = 200
+        e.Graphics.DrawString("Kennzeichen:", ListBox4.Font, Brushes.Black, 62, 60)
+        e.Graphics.DrawString(ComboBox1.SelectedItem, ListBox4.Font, Brushes.Black, 150, 60)
+        e.Graphics.DrawString("Hersteller:", ListBox4.Font, Brushes.Black, 62, 80)
+        e.Graphics.DrawString(Label4.Text, ListBox4.Font, Brushes.Black, 150, 80)
+        e.Graphics.DrawString("Typ:", ListBox4.Font, Brushes.Black, 62, 100)
+        e.Graphics.DrawString(Label10.Text, ListBox4.Font, Brushes.Black, 150, 100)
+        e.Graphics.DrawString("FIN:", ListBox4.Font, Brushes.Black, 62, 120)
+        e.Graphics.DrawString(Label8.Text, ListBox4.Font, Brushes.Black, 150, 120)
+        e.Graphics.DrawImage(PictureBox2.Image, 600, 30)
         For x As Integer = 0 To ListBox4.Items.Count - 1
             e.Graphics.DrawString(ListBox4.Items(x).ToString, ListBox4.Font, Brushes.Black, startX, startY)
             startY += ListBox4.ItemHeight
@@ -270,5 +295,34 @@ Public Class Start
     End Sub
     Private Sub ÄndernToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ÄndernToolStripMenuItem.Click
         datenupdate.Show()
+    End Sub
+
+    'Updatefunktion
+    Private Sub Update() Handles Me.Load
+
+
+        Dim url As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create(My.Settings.update)
+        Dim response As System.Net.HttpWebResponse = url.GetResponse()
+        Dim sr As StreamReader = New StreamReader(response.GetResponseStream())
+        Dim newversion As String = sr.ReadToEnd()
+        Dim current As String = Application.ProductVersion
+        uplabel.Text = current.ToString
+        uplabelnew.Text = newversion.ToString
+
+        If uplabelnew.Text > uplabel.Text Then
+            upbutton.Visible = True
+
+        End If
+
+    End Sub
+    Private Sub upbutton_Click(sender As Object, e As EventArgs) Handles upbutton.Click
+
+        Try
+            Dim path As String = My.Settings.download
+            My.Computer.Network.DownloadFile(path, Application.StartupPath & "Werkstatt" & uplabelnew.Text & ".exe")
+            MsgBox("Das Update wurde herunter geladen!")
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
     End Sub
 End Class
