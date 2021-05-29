@@ -144,6 +144,7 @@ Partial Class Start
         Me.ListBox2.Enabled = False
         Me.ListBox2.ForeColor = System.Drawing.Color.Black
         Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.HorizontalExtent = 10
         Me.ListBox2.Location = New System.Drawing.Point(138, 33)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(752, 420)

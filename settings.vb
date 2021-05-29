@@ -19,4 +19,10 @@
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Me.Close()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        OpenFileDialog1.ShowDialog()
+        TextBox1.Text = OpenFileDialog1.FileName
+    End Sub
+
 End Class

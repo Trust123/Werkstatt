@@ -2,6 +2,8 @@
 Imports System.Data.Odbc
 Public Class Start
     Dim query As String
+    Dim query2 As String
+    Dim query3 As String
     Dim conStr As String = "Driver={Microsoft Access Driver (*.mdb)};Dbq=" & My.Settings.Datenbankpfad
 
     Public Sub Tool_load(sender As Object, e As EventArgs) Handles Me.Load
@@ -152,45 +154,27 @@ Public Class Start
             MsgBox("Fehler" & vbCrLf & ex.Message)
         End Try
     End Sub
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+    Private Sub Button5_Click1(sender As Object, e As EventArgs) Handles Button5.Click
         'speichern
         query = "INSERT INTO service(kennzeichen, datum, km, was) VALUES ('" & ComboBox1.SelectedItem & "', '" & MonthCalendar1.SelectionStart.ToString("dd/MM/yyyy") & "', '" & TextBox1.Text & "', '" & RichTextBox1.Text & "')"
         Dim conn As New OdbcConnection(conStr)
-        Dim com As New OdbcCommand(query, conn)
+        Dim com3 As New OdbcCommand(query, conn)
 
         Try
             conn.Open()
-            com.ExecuteNonQuery()
+            com3.ExecuteNonQuery()
             MsgBox("Gespeichert")
         Catch ex As Exception
             MsgBox("Fehler" & vbCrLf & ex.Message)
         Finally
             conn.Close()
         End Try
-    End Sub
-    Private Sub Button5_Click2(sender As Object, e As EventArgs) Handles Button5.Click
-        'moped löschen
-        query = "DELETE FROM motorrad WHERE kennzeichen IN ('" & ComboBox1.SelectedItem & "')"
-
-        Dim conn As New OdbcConnection(conStr)
-        Dim com As New OdbcCommand(query, conn)
-
-
-        Try
-            conn.Open()
-            com.ExecuteNonQuery()
-
-        Catch ex As Exception
-            MsgBox("Fehler" & vbCrLf & ex.Message)
-        Finally
-            conn.Close()
-        End Try
-    End Sub
-    Private Sub Button5_Click3(sender As Object, e As EventArgs) Handles Button5.Click
         'speichern
-        query = "INSERT INTO motorrad(typ, fin, hersteller, kennzeichen, farbe, hu, km, reifen) VALUES ('" & Label7.Text & "', '" & Label8.Text & "', '" & Label6.Text & "', '" & ComboBox1.SelectedItem & "', '" & Label9.Text & "','" & TextBox2.Text & "', '" & TextBox1.Text & "', '" & Label15.Text & "')"
-        Dim conn As New OdbcConnection(conStr)
-        Dim com As New OdbcCommand(query, conn)
+        query2 = "DELETE FROM motorrad WHERE kennzeichen IN ('" & ComboBox1.SelectedItem & "')"
+
+        Dim com As New OdbcCommand(query2, conn)
+
 
         Try
             conn.Open()
@@ -201,6 +185,20 @@ Public Class Start
         Finally
             conn.Close()
         End Try
+        query3 = "INSERT INTO motorrad(typ, fin, hersteller, kennzeichen, farbe, hu, km, reifen) VALUES ('" & Label7.Text & "', '" & Label8.Text & "', '" & Label6.Text & "', '" & ComboBox1.SelectedItem & "', '" & Label9.Text & "','" & TextBox2.Text & "', '" & TextBox1.Text & "', '" & Label15.Text & "')"
+        Dim com2 As New OdbcCommand(query3, conn)
+
+        Try
+            conn.Open()
+            com2.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Fehler" & vbCrLf & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+        ComboBox1.Items.Clear()
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         'Laden
