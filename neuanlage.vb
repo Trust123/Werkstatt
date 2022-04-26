@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports System.Data.Odbc
+﻿Imports System.Data.Odbc
 Public Class neuanlage
     Dim query As String
     Dim conStr As String = "Driver={Microsoft Access Driver (*.mdb)};Dbq=" & My.Settings.Datenbankpfad

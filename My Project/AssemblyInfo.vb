@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Werte der Assemblyattribute überprüfen
 
-<Assembly: AssemblyTitle("Werkstatt")>
+<Assembly: AssemblyTitle("Fuhrpark")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Werkstatt")>
+<Assembly: AssemblyProduct("Fuhrpark")>
 <Assembly: AssemblyCopyright("Copyright © Trust123 2021")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'Die folgende GUID wird für die typelib-ID verwendet, wenn dieses Projekt für COM verfügbar gemacht wird.
-<Assembly: Guid("6d62bb4f-2a29-4dae-8512-733e7b14da3e")>
+<Assembly: Guid("6d62bb4f-2a23-4dae-8512-733e7b14da3e")>
 
 ' Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 '

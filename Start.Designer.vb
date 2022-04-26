@@ -161,7 +161,7 @@ Partial Class Start
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.Werkstatt.My.Resources.Resources.sm471
+        Me.PictureBox2.Image = Global.Fuhrpark.My.Resources.Resources.sm471
         Me.PictureBox2.Location = New System.Drawing.Point(533, 353)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
@@ -365,7 +365,7 @@ Partial Class Start
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Werkstatt.My.Resources.Resources.sm4711
+        Me.PictureBox1.Image = Global.Fuhrpark.My.Resources.Resources.sm4711
         Me.PictureBox1.Location = New System.Drawing.Point(971, 32)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(240, 253)

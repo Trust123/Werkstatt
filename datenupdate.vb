@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports System.Data.Odbc
+﻿Imports System.Data.Odbc
 
 Public Class datenupdate
     Dim query As String
